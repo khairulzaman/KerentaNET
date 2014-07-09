@@ -7,14 +7,15 @@
     <title>@ViewBag.Title - Kerenta .NET Port</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/bootstrap.css")
+    @Scripts.Render("~/bundles/bootstrap")
   </head>
+
   <body role="document">
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">@Html.ActionLink("Kerenta.NET", "Index", "Home", new { @class = "navbar-brand" })</a>
+          @Html.ActionLink("Kerenta.NET", "Index", "Home", new { @class = "navbar-brand" })
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -26,11 +27,13 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
-    <div class="container theme-showcase" role="main">
-        @RenderSection("featured", required: false)
-        @RenderBody()
-        <p>&copy; @DateTime.Now.Year - Kerenta.NET</p>
-  </div>
+      <div class="container">
+        <div class="container theme-showcase" role="main">
+            @RenderSection("featured", required: false)
+            @RenderBody()
+            <p>&copy; @DateTime.Now.Year - Kerenta.NET</p>
+      </div>
+      </div>
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
   </body>
