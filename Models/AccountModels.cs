@@ -21,10 +21,17 @@ namespace KerentaNET.Models
     [Table("UserProfile")]
     public class UserProfile
     {
+        public UserProfile()
+        {
+            Cars = new List<Car>();
+        }
+
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string UserName { get; set; }
+
+        public virtual ICollection<Car> Cars { get; set; }
     }
 
     public class RegisterExternalLoginModel
